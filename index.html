@@ -1,21 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>AR.js Example with GLB Model</title>
+  <title>AR.js Example with GLB Model and Facebook Icon</title>
   <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
   <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.7.7/aframe/build/aframe-ar.js"></script>
+  <script>
+    AFRAME.registerComponent('navigate-on-click', {
+      schema: {
+        url: { type: 'string' }
+      },
+      init: function () {
+        var data = this.data;
+        var el = this.el;
+        el.addEventListener('click', function () {
+          window.open(data.url, '_blank');
+        });
+      }
+    });
+  </script>
 </head>
 <body style="margin: 0px; overflow: hidden;">
   <a-scene embedded arjs>
     <!-- Añadir un marcador -->
     <a-marker preset="hiro">
       <!-- Añadir el modelo GLB -->
-      <a-entity gltf-model="url(skeleton.glb)" scale="0.2 0.2 0.2" position="0 0 0"></a-entity>
+      <!-- <a-entity gltf-model="url(skeleton.glb)" scale="0.5 0.5 0.5" position="0 0 0"></a-entity> -->
 
-      <!-- Añadir icono facebook con un link -->
-      <a-image src="facebook.png" width="1" height="1" position="0 0.5 0" look-at="[gps-camera]"></a-image>
-      <a-link href="https://www.facebook.com/" title="Facebook" position="0 0.5 0" look-at="[gps-camera]"></a-link>
-      
+      <!-- Añadir el icono de Facebook -->
+      <a-image src="facebook.png" position="0 1 0" scale="0.5 0.5 0.5"
+               navigate-on-click="url: https://www.facebook.com/tu_pagina"
+               class="clickable"></a-image>
     </a-marker>
     <a-entity camera></a-entity>
   </a-scene>
