@@ -11,6 +11,11 @@
     <a-marker preset="hiro">
       <!-- Añadir el modelo GLB -->
       <a-entity gltf-model="url(skeleton.glb)" scale="0.2 0.2 0.2" position="0 0 0"></a-entity>
+
+      <!-- Añadir icono facebook con un link -->
+      <a-image src="facebook.png" width="1" height="1" position="0 0.5 0" look-at="[gps-camera]"></a-image>
+      <a-link href="https://www.facebook.com/" title="Facebook" position="0 0.5 0" look-at="[gps-camera]"></a-link>
+      
     </a-marker>
     <a-entity camera></a-entity>
   </a-scene>
