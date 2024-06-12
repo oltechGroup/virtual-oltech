@@ -12,7 +12,7 @@
       <a-entity gesture-detector>
         <a-entity 
           id="model" 
-          gltf-model="url(/path/to/your-model.glb)" 
+          gltf-model="url(skeleton.glb)" 
           position="0 0 0" 
           scale="1 1 1" 
           rotation="0 0 0"
@@ -23,7 +23,7 @@
     </a-scene>
 
     <script>
-      // Adding rotation-reader component
+      // Componente personalizado para leer rotaciones
       AFRAME.registerComponent('rotation-reader', {
         init: function () {
           this.el.sceneEl.addEventListener('onefingermove', this.onMove.bind(this));
