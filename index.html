@@ -4,34 +4,15 @@
     <title>AR.js with A-Frame</title>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://cdn.rawgit.com/jeromeetienne/ar.js/master/aframe/build/aframe-ar.js"></script>
-    <script src="https://unpkg.com/aframe-gesture-detector-component@3.1.1/dist/aframe-gesture-detector-component.min.js"></script>
-    <script src="https://unpkg.com/aframe-super-hands-component@4.0.0/dist/aframe-super-hands.min.js"></script>
   </head>
   <body style="margin: 0; overflow: hidden;">
     <a-scene embedded arjs>
-      <a-entity gesture-detector>
-        <a-entity 
-          id="model" 
-          gltf-model="url(skeleton.glb)" 
-          position="0 2 4" 
-          scale="0.1 0.1 0.1" 
-          rotation="0 0 0"
-          rotation-reader>
-        </a-entity>
+      <a-entity 
+        gltf-model="url(skeleton.glb)" 
+        position="0 0 -5"
+        scale="1 1 1">
       </a-entity>
       <a-camera-static></a-camera-static>
     </a-scene>
-
-    <script>
-      // Componente personalizado para leer rotaciones
-      AFRAME.registerComponent('rotation-reader', {
-        init: function () {
-          this.el.sceneEl.addEventListener('onefingermove', this.onMove.bind(this));
-        },
-        onMove: function (event) {
-          this.el.object3D.rotation.y += event.detail.positionChange.x * 0.1;
-        }
-      });
-    </script>
   </body>
 </html>
