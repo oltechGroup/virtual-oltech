@@ -22,7 +22,7 @@
   <body style="margin: 0px; overflow: hidden">
     <a-scene embedded arjs>
       <!-- Añadir un marcador -->
-      <a-marker type="pattern" url="qr-virtual.patt">
+      <a-marker preset="hiro">
         <!-- Añadir el modelo GLB -->
         <a-entity
           gltf-model="url(skeleton.glb)"
@@ -34,7 +34,6 @@
           gltf-model="url(facebook_logo.glb)"
           scale="0.2 0.2 0.2"
           position="0.8 1.5 0"
-          onclick= 
         ></a-entity>
       </a-marker>
       <a-entity camera></a-entity>
