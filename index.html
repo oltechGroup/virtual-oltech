@@ -7,12 +7,19 @@
   </head>
   <body style="margin: 0px; overflow: hidden">
     <a-scene embedded arjs>
-      <a-entity
-        gltf-model="url(skeleton.glb)"
-        scale="0.1 0.1 0.1"
-        position="0 0 0"
-      ></a-entity>
-      <a-camera-static></a-camera-static>
+        <a-entity
+          gltf-model="url(skeleton.glb)"
+          scale="0.3 0.3 0.3"
+          position="0 0 0"
+        ></a-entity>
+
+        <a-entity
+          gltf-model="url(facebook_logo.glb)"
+          scale="0.2 0.2 0.2"
+          position="0.8 1.5 0"
+          onclick= 
+        ></a-entity>
+      <a-entity camera></a-entity>
     </a-scene>
   </body>
 </html>
