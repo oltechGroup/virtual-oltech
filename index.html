@@ -12,19 +12,49 @@
         position="0 0 -6"
         scale="0.5 0.5 0.5">
       </a-entity>
-
-      <a-entity 
-        gltf-model="url(facebook_logo.glb)" 
-        position="1 3 -7"
-        scale="0.3 0.3 0.3">
-      </a-entity>
-
-      <a-entity 
-        gltf-model="url(instagram_logo.glb)" 
-        position="2 3 -7"
-        
-        scale="0.3 0.3 0.3">
-      </a-entity>
+      
+      <!-- Link to a webpage -->
+      <a-plane 
+        position="0 2 -4" 
+        width="2" 
+        height="0.5" 
+        color="#4CC3D9"
+        onclick="window.open('https://www.example.com', '_blank');">
+        <a-text 
+          value="Visit Our Website" 
+          align="center" 
+          color="#FFFFFF">
+        </a-text>
+      </a-plane>
+      
+      <!-- Link to Facebook -->
+      <a-plane 
+        position="0 1 -4" 
+        width="2" 
+        height="0.5" 
+        color="#3B5998"
+        onclick="window.open('https://www.facebook.com', '_blank');">
+        <a-text 
+          value="Visit Our Facebook" 
+          align="center" 
+          color="#FFFFFF">
+        </a-text>
+      </a-plane>
+      
+      <!-- Link to Instagram -->
+      <a-plane 
+        position="0 0 -4" 
+        width="2" 
+        height="0.5" 
+        color="#E1306C"
+        onclick="window.open('https://www.instagram.com', '_blank');">
+        <a-text 
+          value="Visit Our Instagram" 
+          align="center" 
+          color="#FFFFFF">
+        </a-text>
+      </a-plane>
+      
       <a-camera-static></a-camera-static>
     </a-scene>
   </body>
