@@ -4,6 +4,20 @@
     <title>AR.js with A-Frame</title>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://cdn.rawgit.com/jeromeetienne/ar.js/master/aframe/build/aframe-ar.js"></script>
+    <script>
+      AFRAME.registerComponent('link', {
+        schema: {
+          url: {type: 'string'}
+        },
+        init: function () {
+          var data = this.data;
+          var el = this.el;
+          el.addEventListener('click', function () {
+            window.open(data.url, '_blank');
+          });
+        }
+      });
+    </script>
   </head>
   <body style="margin: 0; overflow: hidden;">
     <a-scene embedded arjs>
@@ -19,7 +33,7 @@
         width="2" 
         height="0.5" 
         color="#4CC3D9"
-        onclick="window.open('https://www.example.com', '_blank');">
+        link="url: https://www.example.com">
         <a-text 
           value="Visit Our Website" 
           align="center" 
@@ -33,7 +47,7 @@
         width="2" 
         height="0.5" 
         color="#3B5998"
-        onclick="window.open('https://www.facebook.com', '_blank');">
+        link="url: https://www.facebook.com">
         <a-text 
           value="Visit Our Facebook" 
           align="center" 
@@ -47,7 +61,7 @@
         width="2" 
         height="0.5" 
         color="#E1306C"
-        onclick="window.open('https://www.instagram.com', '_blank');">
+        link="url: https://www.instagram.com">
         <a-text 
           value="Visit Our Instagram" 
           align="center" 
