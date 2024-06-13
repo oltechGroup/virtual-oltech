@@ -1,7 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>AR.js with A-Frame</title>
+    <title>Oltech | Realidad Aumentada</title>
+    <meta
+      name="description"
+      content="Oltech | Realidad Aumentada"
+    />
+    <meta
+      name="keywords"
+      content="Oltech, Realidad Aumentada, RA, AR"
+    />
+    <meta name="author" content="Oltech" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    
+    <!-- Icono Oltech SVG -->
+    <link rel="icon" href="icon.svg" type="image/svg+xml" />
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://cdn.rawgit.com/jeromeetienne/ar.js/master/aframe/build/aframe-ar.js"></script>
   </head>
@@ -29,6 +43,7 @@
         width="0.5"
         height="0.5"
         class="clickable"
+        onclick="window.open('https://www.oltech.mx', '_blank')"
         event-set__click="_event: click; _target: #web-link"
       >
       </a-image>
