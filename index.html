@@ -1,96 +1,34 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Oltech | Realidad Aumentada</title>
-    <meta name="description" content="Oltech | Realidad Aumentada" />
-    <meta name="keywords" content="Oltech, Realidad Aumentada, RA, AR" />
-    <meta name="author" content="Oltech" />
-    <!-- Icono Oltech SVG -->
-    <link rel="icon" href="icon.svg" type="image/svg+xml" />
-    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <meta charset="utf-8">
+    <title>Links</title>
+    <meta name="description" content="Links • A-Frame">
+    <script src="../../../dist/aframe-master.js"></script>
     <script src="js/components/aframe-tooltip-component.js"></script>
     <script src="js/components/camera-position.js"></script>
     <script src="js/components/link-controls.js"></script>
-    <script src="https://cdn.rawgit.com/jeromeetienne/ar.js/master/aframe/build/aframe-ar.js"></script>
     <script src="https://unpkg.com/aframe-environment-component@1.3.4/dist/aframe-environment-component.min.js"></script>
-    <link rel="stylesheet" href="styles.css">
+    <script src="../../js/info-message.js"></script>
   </head>
-  <body style="margin: 0; overflow: hidden">
-    
+  <body>
     <a-scene
       raycaster="far: 100; objects: [link];"
       cursor="rayOrigin: mouse"
+      camera-position
       environment
-    >
+      info-message="htmlSrc: #messageText">
       <a-assets>
-        <img
-          id="thumbWeb"
-          crossorigin="anonymous"
-          src="./assets/images/web.png"
-        />
-        <img
-          id="thumbFacebook"
-          crossorigin="anonymous"
-          src="./assets/images/facebook.png"
-        />
-        <img
-          id="thumbInstagram"
-          crossorigin="anonymous"
-          src="./assets/images/instagram.png"
-        />
+       <img id="thumbJapan" crossOrigin="anonymous" src="https://cdn.aframe.io/link-traversal/thumbs/japan.png">
+       <img id="thumbEgypt" crossOrigin="anonymous" src="https://cdn.aframe.io/link-traversal/thumbs/egypt.png">
+       <img id="thumbForest" crossOrigin="anonymous" src="https://cdn.aframe.io/link-traversal/thumbs/forest.png">
+       <a-asset-item id="messageText" src="message.html"></a-asset-item>
       </a-assets>
-
-      <a-entity
-        id="skeleton"
-        gltf-model="url(./assets/skeleton.glb)"
-        position="0 0 -6"
-        scale="0.5 0.5 0.5"
-      >
-      </a-entity>
-
-      <!-- Imagen oltech.png -->
-      <a-image
-        src="url(./assets/images/oltech.png)"
-        position="2 4 -5"
-        width="3"
-        height="1"
-      >
-      </a-image>
-
-      <a-entity href="https://example.com" pointerevents="mouse">
-        <a-link
-          href="https://www.oltech.mx"
-          position="-2 3 -5"
-          title="WebSite"
-          imageScale="0.2 0.2 0.2"
-          image="#thumbWeb"
-          peekMode="true"
-        ></a-link>
-      </a-entity>
-      <a-link
-        href="https://www.facebook.com/OltechMexico"
-        position="-2.6 0 -5"
-        image="#thumbFacebook"
-        title="Facebook"
-      ></a-link>
-      <a-link
-        href="https://www.instagram.com/grupooltech"
-        position="2.3 1.5 -5"
-        image="#thumbInstagram"
-        peekMode="true"
-        title="Instagram"
-      ></a-link>
+      <a-link href="https://www.oltech.mx" position="-3.5 1.5 -1.0" image="#thumbJapan" title="WebSite"></a-link>
+      <a-link href="https://www.facebook.com/OltechMexico" position="0 1.5 -1.0" image="#thumbEgypt" title="Facebook"></a-link>
+      <a-link href="https://www.instagram.com/grupooltech" position="3.5 1.5 -1.0" image="#thumbForest" title="Instagram"></a-link>
       <a-entity id="leftHand" link-controls="hand: left"></a-entity>
       <a-entity id="rightHand" link-controls="hand: right"></a-entity>
     </a-scene>
-
-    <script>
-      // Ajustar el aspecto de la cámara cuando la ventana cambia de tamaño
-      window.addEventListener('resize', function () {
-        const scene = document.querySelector('a-scene');
-        const camera = scene.querySelector('[camera]');
-        camera.setAttribute('camera', 'aspect', window.innerWidth / window.innerHeight);
-      });
-    </script>
   </body>
 </html>
