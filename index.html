@@ -19,6 +19,7 @@
     <a-scene
       raycaster="far: 100; objects: [link];"
       cursor="rayOrigin: mouse"
+      embedded
     >
       <a-assets>
         <img
@@ -81,5 +82,14 @@
       <a-entity id="leftHand" link-controls="hand: left"></a-entity>
       <a-entity id="rightHand" link-controls="hand: right"></a-entity>
     </a-scene>
+
+    <script>
+      // Ajustar el aspecto de la cámara cuando la ventana cambia de tamaño
+      window.addEventListener('resize', function () {
+        const scene = document.querySelector('a-scene');
+        const camera = scene.querySelector('[camera]');
+        camera.setAttribute('camera', 'aspect', window.innerWidth / window.innerHeight);
+      });
+    </script>
   </body>
 </html>
