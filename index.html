@@ -42,7 +42,6 @@
         gltf-model="url(./assets/skeleton.glb)"
         position="0 0 -6"
         scale="0.5 0.5 0.5"
-        link="href: about.html; title: My Homepage; image: #homeThumbnail"
       >
       </a-entity>
 
@@ -55,26 +54,35 @@
       >
       </a-image>
 
-      <a-link
+      <!-- <a-link
         href="https://www.oltech.mx"
-        position="1 3 -5"
+        position="-2 3 -5"
+        title="WebSite"
+        imageScale="0.2 0.2 0.2"
         image="#thumbWeb"
-      ></a-link>
+        peekMode="true"
+      ></a-link> -->
+
+      <a-entity
+        link="href: index.html; title: My Homepage; image: #thumbWeb"
+        position="-2 3 -5"
+      ></a-entity>
       <a-link
         href="https://www.facebook.com/OltechMexico"
-        position="1.5 2 -5"
+        position="-2.6 0 -5"
         image="#thumbFacebook"
+        peekMode="true"
+        title="Facebook"
       ></a-link>
       <a-link
         href="https://www.instagram.com/grupooltech"
-        position="2 1 -5"
+        position="2.3 1.5 -5"
         image="#thumbInstagram"
+        peekMode="true"
+        title="Instagram"
       ></a-link>
-
       <a-entity id="leftHand" link-controls="hand: left"></a-entity>
       <a-entity id="rightHand" link-controls="hand: right"></a-entity>
-
-      <!-- <a-camera-static></a-camera-static> -->
     </a-scene>
   </body>
 </html>
