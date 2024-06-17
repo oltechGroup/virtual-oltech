@@ -14,29 +14,30 @@
     <script src="https://cdn.rawgit.com/jeromeetienne/ar.js/master/aframe/build/aframe-ar.js"></script>
   </head>
   <body style="margin: 0; overflow: hidden">
-    <a-assets>
-      <img
-        id="thumbWeb"
-        crossorigin="anonymous"
-        src="./assets/images/web.png"
-      />
-      <img
-        id="thumbFacebook"
-        crossorigin="anonymous"
-        src="./assets/images/facebook.png"
-      />
-      <img
-        id="thumbInstagram"
-        crossorigin="anonymous"
-        src="./assets/images/instagram.png"
-      />
-    </a-assets>
-
     <a-scene
       raycaster="far: 100; objects: [link];"
+      arjs="sourceType: webcam; debugUIEnabled: false;"
       cursor="rayOrigin: mouse"
       camera-position
     >
+      <a-assets>
+        <img
+          id="thumbWeb"
+          crossorigin="anonymous"
+          src="./assets/images/web.png"
+        />
+        <img
+          id="thumbFacebook"
+          crossorigin="anonymous"
+          src="./assets/images/facebook.png"
+        />
+        <img
+          id="thumbInstagram"
+          crossorigin="anonymous"
+          src="./assets/images/instagram.png"
+        />
+      </a-assets>
+
       <a-entity
         id="skeleton"
         gltf-model="url(./assets/skeleton.glb)"
@@ -54,19 +55,20 @@
       >
       </a-image>
 
-      <a-link
-        href="https://www.oltech.mx"
-        position="-2 3 -5"
-        title="WebSite"
-        imageScale="0.2 0.2 0.2"
-        image="#thumbWeb"
-        peekMode="true"
-      ></a-link>
+      <a-entity href="https://example.com" pointerevents="mouse">
+        <a-link
+          href="https://www.oltech.mx"
+          position="-2 3 -5"
+          title="WebSite"
+          imageScale="0.2 0.2 0.2"
+          image="#thumbWeb"
+          peekMode="true"
+        ></a-link>
+      </a-entity>
       <a-link
         href="https://www.facebook.com/OltechMexico"
         position="-2.6 0 -5"
         image="#thumbFacebook"
-        peekMode="true"
         title="Facebook"
       ></a-link>
       <a-link
