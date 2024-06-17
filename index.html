@@ -15,10 +15,10 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body style="margin: 0; overflow: hidden">
-    
     <a-scene
-      raycaster="far: 100; objects: [link]; "
+      raycaster="far: 100; objects: [link];"
       cursor="rayOrigin: mouse"
+      embedded
     >
       <a-assets>
         <img
@@ -80,6 +80,14 @@
       ></a-link>
       <a-entity id="leftHand" link-controls="hand: left"></a-entity>
       <a-entity id="rightHand" link-controls="hand: right"></a-entity>
+      
+      <!-- Añadir una cámara con propiedad fit -->
+      <a-entity camera look-controls>
+        <a-entity 
+          position="0 1.6 0" 
+          camera="fit: both; fitOffset: 1.5" 
+        ></a-entity>
+      </a-entity>
     </a-scene>
   </body>
 </html>
