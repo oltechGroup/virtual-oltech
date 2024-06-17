@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Links</title>
-    <meta name="description" content="Links • A-Frame">
+    <meta name="description" content="Links • A-Frame" />
     <script src="../../../dist/aframe-master.js"></script>
     <script src="js/components/aframe-tooltip-component.js"></script>
     <script src="js/components/camera-position.js"></script>
@@ -17,16 +17,61 @@
       cursor="rayOrigin: mouse"
       camera-position
       environment
-      info-message="htmlSrc: #messageText">
+      info-message="htmlSrc: #messageText"
+    >
       <a-assets>
-       <img id="thumbJapan" crossOrigin="anonymous" src="https://cdn.aframe.io/link-traversal/thumbs/japan.png">
-       <img id="thumbEgypt" crossOrigin="anonymous" src="https://cdn.aframe.io/link-traversal/thumbs/egypt.png">
-       <img id="thumbForest" crossOrigin="anonymous" src="https://cdn.aframe.io/link-traversal/thumbs/forest.png">
-       <a-asset-item id="messageText" src="message.html"></a-asset-item>
+        <img
+          id="thumbJapan"
+          crossorigin="anonymous"
+          src="https://cdn.aframe.io/link-traversal/thumbs/japan.png"
+        />
+        <img
+          id="thumbEgypt"
+          crossorigin="anonymous"
+          src="https://cdn.aframe.io/link-traversal/thumbs/egypt.png"
+        />
+        <img
+          id="thumbForest"
+          crossorigin="anonymous"
+          src="https://cdn.aframe.io/link-traversal/thumbs/forest.png"
+        />
+        <a-asset-item id="messageText" src="message.html"></a-asset-item>
       </a-assets>
-      <a-link href="https://www.oltech.mx" position="-3.5 1.5 -1.0" image="#thumbJapan" title="WebSite"></a-link>
-      <a-link href="https://www.facebook.com/OltechMexico" position="0 1.5 -1.0" image="#thumbEgypt" title="Facebook"></a-link>
-      <a-link href="https://www.instagram.com/grupooltech" position="3.5 1.5 -1.0" image="#thumbForest" title="Instagram"></a-link>
+
+      <a-image
+        src="url(./assets/images/oltech.png)"
+        position="0 5 -1.0"
+        width="3"
+        height="1"
+      >
+      </a-image>
+
+      <a-entity
+        id="skeleton"
+        gltf-model="url(./assets/skeleton.glb)"
+        position="0 0 -1.0"
+        scale="0.5 0.5 0.5"
+      >
+      </a-entity>
+
+      <a-link
+        href="https://www.oltech.mx"
+        position="-3.5 1.5 -1.0"
+        image="#thumbJapan"
+        title="WebSite"
+      ></a-link>
+      <a-link
+        href="https://www.facebook.com/OltechMexico"
+        position="-3.0 4.5 -1.0"
+        image="#thumbEgypt"
+        title="Facebook"
+      ></a-link>
+      <a-link
+        href="https://www.instagram.com/grupooltech"
+        position="3.5 1.5 -1.0"
+        image="#thumbForest"
+        title="Instagram"
+      ></a-link>
       <a-entity id="leftHand" link-controls="hand: left"></a-entity>
       <a-entity id="rightHand" link-controls="hand: right"></a-entity>
     </a-scene>
