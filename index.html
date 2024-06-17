@@ -12,13 +12,13 @@
     <script src="js/components/camera-position.js"></script>
     <script src="js/components/link-controls.js"></script>
     <script src="https://cdn.rawgit.com/jeromeetienne/ar.js/master/aframe/build/aframe-ar.js"></script>
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body style="margin: 0; overflow: hidden">
+    
     <a-scene
-      raycaster="far: 100; objects: [link];"
-      arjs="sourceType: webcam; debugUIEnabled: false;"
+      raycaster="far: 100; objects: [link]; "
       cursor="rayOrigin: mouse"
-      camera-position
     >
       <a-assets>
         <img
