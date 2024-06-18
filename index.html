@@ -1,84 +1,133 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-    <title>Redes Sociales Oltech</title>
-    <meta name="description" content="Links • A-Frame" />
-    <script src="../../../dist/aframe-master.js"></script>
-    <script src="js/components/aframe-tooltip-component.js"></script>
-    <script src="js/components/camera-position.js"></script>
-    <script src="js/components/link-controls.js"></script>
-    <script src="https://unpkg.com/aframe-environment-component@1.3.4/dist/aframe-environment-component.min.js"></script>
-    <script src="../../js/info-message.js"></script>
+    <title>Oltech | Realidad Aumentada</title>
+    <meta
+      name="description"
+      content="Oltech | Realidad Aumentada"
+    />
+    <meta
+      name="keywords"
+      content="Oltech, Realidad Aumentada, RA, AR"
+    />
+    <meta name="author" content="Oltech" />
+    <!-- Icono Oltech SVG -->
+    <link rel="icon" href="icon.svg" type="image/svg+xml" />
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/jeromeetienne/ar.js/master/aframe/build/aframe-ar.js"></script>
   </head>
-  <body>
+  <body style="margin: 0; overflow: hidden">
     <a-scene
-      raycaster="far: 100; objects: [link];"
-      cursor="rayOrigin: mouse"
-      camera-position
-      info-message="htmlSrc: #messageText"
+      vr-mode-ui="enabled: false"
+      embedded
+      arjs="sourceType: webcam; debugUIEnabled: false;"
     >
-      <a-assets>
-        <img id="skyTexture" src="./assets/images/oficina.jpg"  />
-        <img
-          id="thumbJapan"
-          crossorigin="anonymous"
-          src="https://cdn.aframe.io/link-traversal/thumbs/japan.png"
-        />
-        <img
-          id="thumbEgypt"
-          crossorigin="anonymous"
-          src="https://cdn.aframe.io/link-traversal/thumbs/egypt.png"
-        />
-        <img
-          id="thumbForest"
-          crossorigin="anonymous"
-          src="https://cdn.aframe.io/link-traversal/thumbs/forest.png"
-        />
-        <a-asset-item id="messageText" src="message.html"></a-asset-item>
-      </a-assets>
-
-      <a-image
-        src="url(./assets/images/oltech.png)"
-        position="0 5 -1.0"
-        width="3"
-        height="1"
-      >
-      </a-image>
-
       <a-entity
-        id="skeleton"
-        gltf-model="url(./assets/skeleton.glb)"
-        position="0 1 0"
-        scale="0.19 0.19 0.19"
+        gltf-model="url(skeleton.glb)"
+        position="0 0 -6"
+        scale="0.5 0.5 0.5"
       >
       </a-entity>
 
-      <a-link
-        href="https://www.oltech.mx"
-        position="-2 1.5 -1.0"
-        image="#thumbJapan"
-        title="WebSite"
-        scale="0.5 0.5 0.5"
-      ></a-link>
-      <a-link
-        href="https://www.facebook.com/OltechMexico"
-        position="-1.5 3.2 -1.0"
-        image="#thumbEgypt"
-        title="Facebook"
-        scale="0.5 0.5 0.5"
-      ></a-link>
-      <a-link
-        href="https://www.instagram.com/grupooltech"
-        position="1.5 3.2 -1.0"
-        image="#thumbForest"
-        title="Instagram"
-        scale="0.5 0.5 0.5"
-      ></a-link>
-      <a-entity id="leftHand" link-controls="hand: left"></a-entity>
-      <a-entity id="rightHand" link-controls="hand: right"></a-entity>
+      <!-- Imagen oltech.png -->
+      <a-image src="url(oltech.png)" position="2 4 -5" width="3" height="1">
+      </a-image>
 
-      <a-sky src="#skyTexture"></a-sky>
+      <!-- Link a página web -->
+      <a-image
+        src="url(web.png)"
+        position="1 3 -5"
+        width="0.5"
+        height="0.5"
+        class="clickable"
+        onclick="window.open('https://www.oltech.mx', '_blank')"
+        event-set__click="_event: click; _target: #web-link"
+      >
+      </a-image>
+      <a-text
+        value="www.oltech.mx"
+        position="1.3 3 -5"
+        align="left"
+        color="#1B4DFF"
+        class="clickable"
+        event-set__click="_event: click; _target: #web-link"
+      >
+      </a-text>
+
+      <!-- Link a Facebook -->
+      <a-image
+        src="url(facebook.png)"
+        position="1.5 2 -5"
+        width="0.5"
+        height="0.5"
+        class="clickable"
+        event-set__click="_event: click; _target: #facebook-link"
+      >
+      </a-image>
+      <a-text
+        value="Oltech"
+        position="1.8 2 -5"
+        align="left"
+        color="#1B4DFF"
+        class="clickable"
+        event-set__click="_event: click; _target: #facebook-link"
+      >
+      </a-text>
+
+      <!-- Link a Instagram -->
+      <a-image
+        src="url(instagram.png)"
+        position="2 1 -5"
+        width="0.5"
+        height="0.5"
+        class="clickable"
+        event-set__click="_event: click; _target: #instagram-link"
+      >
+      </a-image>
+      <a-text
+        value="grupooltech"
+        position="2.3 1 -5"
+        align="left"
+        color="#1B4DFF"
+        class="clickable"
+        event-set__click="_event: click; _target: #instagram-link"
+      >
+      </a-text>
+
+      <!-- Links invisibles -->
+      <a-entity
+        id="web-link"
+        visible="false"
+        link="href: https://www.example.com"
+      ></a-entity>
+      <a-entity
+        id="facebook-link"
+        visible="false"
+        link="href: https://www.facebook.com"
+      ></a-entity>
+      <a-entity
+        id="instagram-link"
+        visible="false"
+        link="href: https://www.instagram.com"
+      ></a-entity>
+
+      <a-camera-static></a-camera-static>
     </a-scene>
+
+    <script>
+      // Script para redireccionar al hacer click en los iconos y textos
+      document.querySelectorAll(".clickable").forEach(function (item) {
+        console.log(item);
+        item.addEventListener("click", function () {
+          const linkId = this.getAttribute("event-set__click")._target.replace(
+            "#",
+            ""
+          );
+          const linkEntity = document.getElementById(linkId);
+          const href = linkEntity.getAttribute("link").href;
+          window.open(href, "_blank");
+        });
+      });
+    </script>
   </body>
 </html>
