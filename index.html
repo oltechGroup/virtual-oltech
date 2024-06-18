@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Links</title>
+    <title>Redes Sociales Oltech</title>
     <meta name="description" content="Links • A-Frame" />
     <script src="../../../dist/aframe-master.js"></script>
     <script src="js/components/aframe-tooltip-component.js"></script>
@@ -16,10 +16,10 @@
       raycaster="far: 100; objects: [link];"
       cursor="rayOrigin: mouse"
       camera-position
-      environment
       info-message="htmlSrc: #messageText"
     >
       <a-assets>
+        <img id="skyTexture" src="./assets/images/oficina.jpg" />
         <img
           id="thumbJapan"
           crossorigin="anonymous"
@@ -49,31 +49,36 @@
       <a-entity
         id="skeleton"
         gltf-model="url(./assets/skeleton.glb)"
-        position="0 0 -1.0"
-        scale="0.5 0.5 0.5"
+        position="0 1 0"
+        scale="0.19 0.19 0.19"
       >
       </a-entity>
 
       <a-link
         href="https://www.oltech.mx"
-        position="-3.5 1.5 -1.0"
+        position="-2 1.5 -1.0"
         image="#thumbJapan"
         title="WebSite"
+        scale="0.5 0.5 0.5"
       ></a-link>
       <a-link
         href="https://www.facebook.com/OltechMexico"
-        position="-3.0 4.5 -1.0"
+        position="-1.5 3.2 -1.0"
         image="#thumbEgypt"
         title="Facebook"
+        scale="0.5 0.5 0.5"
       ></a-link>
       <a-link
         href="https://www.instagram.com/grupooltech"
-        position="3.5 1.5 -1.0"
+        position="1.5 3.2 -1.0"
         image="#thumbForest"
         title="Instagram"
+        scale="0.5 0.5 0.5"
       ></a-link>
       <a-entity id="leftHand" link-controls="hand: left"></a-entity>
       <a-entity id="rightHand" link-controls="hand: right"></a-entity>
+
+      <a-sky src="#skyTexture"></a-sky>
     </a-scene>
   </body>
 </html>
