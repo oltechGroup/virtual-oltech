@@ -12,12 +12,21 @@
     <script>
       window.onload = function () {
         document
-          .querySelector(".btn-click")
+          .querySelector(".facebook")
           .addEventListener("click", function () {
-            // here you can change also a-scene or a-entity properties, like
-            // changing your 3D model source, size, position and so on
-            // or you can just open links, trigger actions...
-            alert("Hi there!");
+            window.open("https://www.facebook.com", "_blank");
+          });
+
+        document
+          .querySelector(".instagram")
+          .addEventListener("click", function () {
+            window.open("https://www.instagram.com", "_blank");
+          });
+
+        document
+          .querySelector(".web")
+          .addEventListener("click", function () {
+            window.open("https://www.oltech.mx", "_blank");
           });
       };
     </script>
@@ -58,15 +67,15 @@
   </head>
   <body style="margin: 0; overflow: hidden">
     <div class="buttons">
-      <button class="btn-click">
+      <button class="btn-click facebook">
         <img src="facebook.png" alt="Facebook" /> Facebook
       </button>
 
-      <button class="btn-click">
+      <button class="btn-click instagram">
         <img src="instagram.png" alt="Instagram" /> Instagram
       </button>
 
-      <button class="btn-click">
+      <button class="btn-click web">
         <img src="web.png" alt="Página Web" /> Página Web
       </button>
     </div>
