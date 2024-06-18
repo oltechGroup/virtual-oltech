@@ -2,14 +2,8 @@
 <html>
   <head>
     <title>Oltech | Realidad Aumentada</title>
-    <meta
-      name="description"
-      content="Oltech | Realidad Aumentada"
-    />
-    <meta
-      name="keywords"
-      content="Oltech, Realidad Aumentada, RA, AR"
-    />
+    <meta name="description" content="Oltech | Realidad Aumentada" />
+    <meta name="keywords" content="Oltech, Realidad Aumentada, RA, AR" />
     <meta name="author" content="Oltech" />
     <!-- Icono Oltech SVG -->
     <link rel="icon" href="icon.svg" type="image/svg+xml" />
@@ -18,9 +12,11 @@
   </head>
   <body style="margin: 0; overflow: hidden">
     <a-scene
+      cursor="rayOrigin: mouse; fuse: true; fuseTimeout: 0;"
+      raycaster="objects: [gps-projected-entity-place];"
       vr-mode-ui="enabled: false"
       embedded
-      arjs="sourceType: webcam; debugUIEnabled: false;"
+      arjs="sourceType: webcam; debugUIEnabled: false"
     >
       <a-entity
         gltf-model="url(skeleton.glb)"
@@ -40,7 +36,7 @@
         width="0.5"
         height="0.5"
         class="clickable"
-        onclick="window.open('https://www.oltech.mx', '_blank')"
+        link="href: page.html"
         event-set__click="_event: click; _target: #web-link"
       >
       </a-image>
